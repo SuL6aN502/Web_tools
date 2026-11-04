@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SpeedInsights />
         {ADSENSE_CLIENT_ID ? (
           <Script
-          
+           
             id="adsense-script"
             strategy="afterInteractive"
             async
