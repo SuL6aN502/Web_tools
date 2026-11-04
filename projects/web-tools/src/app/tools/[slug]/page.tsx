@@ -23,6 +23,10 @@ export async function generateMetadata({
     title,
     description,
     keywords: [...tool.keywords.ar, ...tool.keywords.en],
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: { canonical: url },
     openGraph: {
       title,

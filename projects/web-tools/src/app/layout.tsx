@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { LangProvider } from "@/lib/i18n";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SITE_DESC, SITE_NAME, SITE_URL } from "@/lib/site";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
+
+const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -50,6 +53,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1">{children}</main>
           <Footer />
         </LangProvider>
+        <Analytics />
+        <SpeedInsights />
+        {ADSENSE_CLIENT_ID ? (
+          <Script
+            id="adsense-script"
+            strategy="afterInteractive"
+            async
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+          />
+        ) : null}
       </body>
     </html>
   );
