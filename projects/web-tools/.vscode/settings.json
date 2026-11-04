@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^git --no-pager status --short && printf '\\\\nConfigured env files:\\\\n' && find \\. -maxdepth 1 -type f -name '\\.env\\*' -print$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

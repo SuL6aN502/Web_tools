@@ -1,5 +1,5 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://web-tools.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://alltools-nine.vercel.app";
 
 export const SITE_NAME = {
   ar: "أدوات الويب المجانية",
