@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", Tahoma, system-ui, -apple-system, "Noto Kufi Arabic",
+    "Noto Sans Arabic", "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-slate-50);
+  color: var(--color-slate-800);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #c7d2fe;
+}
+
+/* ---------- shared form controls ---------- */
+.inp {
+  @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100;
+}
+
+.inp:disabled {
+  @apply bg-slate-100 text-slate-500;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.btn-primary {
+  @apply bg-indigo-600 text-white shadow-sm hover:bg-indigo-700;
+}
+
+.btn-outline {
+  @apply border border-slate-300 bg-white text-slate-700 hover:border-indigo-400 hover:text-indigo-700;
+}
+
+.btn-soft {
+  @apply bg-indigo-50 text-indigo-700 hover:bg-indigo-100;
+}
+
+.btn-danger {
+  @apply bg-rose-50 text-rose-700 hover:bg-rose-100;
+}
+
+/* ---------- cards / labels ---------- */
+.card {
+  @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+}
+
+.label {
+  @apply mb-1.5 block text-sm font-semibold text-slate-700;
+}
+
+.pill {
+  @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+}
+
+/* ---------- ad slots (AdSense placeholders, not live) ---------- */
+.ad-slot {
+  @apply flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-100/70 text-slate-400;
+}
