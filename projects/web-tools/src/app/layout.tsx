@@ -63,8 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             crossOrigin="anonymous"
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
           />
-        ) : null}
-      </body>
+      ) : null}      </body>
     </html>
   );
 }
